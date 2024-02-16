@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go021622-gitops
+  description: This is GitOps manifest for go021622   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: go021622
+    janus-idp.io/tekton: go021622 
+    backstage.io/kubernetes-id: go021622
+    backstage.io/kubernetes-namespace: test-ns
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go021622
